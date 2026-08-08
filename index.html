@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Nurullo Ibrohimov — Digital Card</title>
+
+  <meta name="description" content="Nurullo Ibrohimov — shaxsiy digital vizitka">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, #252525 0%, #111111 45%, #070707 100%);
+      color: #ffffff;
+      padding: 25px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 34px 24px 28px;
+      background: rgba(20, 20, 20, 0.94);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 28px;
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 0 35px rgba(255, 255, 255, 0.015);
+    }
+
+    .photo-wrap {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 20px;
+      padding: 4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4af37, #f4df91, #9d7b18);
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      display: block;
+      background: #222;
+      border: 3px solid #111;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 27px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-top: 7px;
+      color: #c9c9c9;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .line {
+      width: 55px;
+      height: 2px;
+      margin: 22px auto;
+      background: #d4af37;
+      border-radius: 10px;
+    }
+
+    .section-title {
+      color: #d4af37;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .info {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 17px;
+      padding: 15px 16px;
+      margin-bottom: 10px;
+    }
+
+    .info-label {
+      color: #999;
+      font-size: 11px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-value {
+      color: #eeeeee;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .links {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 15px;
+      border-radius: 16px;
+      transition: 0.2s ease;
+    }
+
+    .link:hover {
+      border-color: rgba(212,175,55,0.5);
+      transform: translateY(-1px);
+    }
+
+    .icon {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(212,175,55,0.12);
+      color: #d4af37;
+      font-size: 19px;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .link-title {
+      font-size: 11px;
+      color: #8f8f8f;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .link-value {
+      font-size: 14px;
+      color: #f1f1f1;
+    }
+
+    .quote {
+      text-align: center;
+      margin-top: 26px;
+      padding: 21px 14px;
+      border-top: 1px solid rgba(212,175,55,0.25);
+      border-bottom: 1px solid rgba(212,175,55,0.25);
+    }
+
+    .quote p {
+      color: #eeeeee;
+      font-size: 14px;
+      line-height: 1.65;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .quote p:last-child {
+      margin-bottom: 0;
+      font-style: normal;
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .save-contact {
+      width: 100%;
+      border: none;
+      margin-top: 22px;
+      padding: 15px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #d4af37, #b88b20);
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 22px;
+      color: #666;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 380px) {
+      .card {
+        padding: 28px 18px 24px;
+      }
+
+      .name {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+
+    <div class="photo-wrap">
+      <img
+        class="photo"
+        src="profile.jpg"
+        alt="Nurullo Ibrohimov"
+      >
+    </div>
+
+    <h1 class="name">Nurullo Ibrohimov</h1>
+
+    <div class="subtitle">Personal Digital Card</div>
+
+    <div class="line"></div>
+
+    <div class="section-title">Shaxsiy ma'lumotlar</div>
+
+    <div class="info">
+      <div class="info-label">F.I.O</div>
+      <div class="info-value">
+        Ibrohimov Nurullo Tolibjon o‘g‘li
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-label">Tug‘ilgan sana</div>
+      <div class="info-value">
+        05.04.2004
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-label">Manzil</div>
+      <div class="info-value">
+        Farg‘ona viloyati, Toshloq tumani,
+        Qo‘rg‘oncha mahallasi
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="section-title">Bog‘lanish</div>
+
+    <div class="links">
+
+      <a class="link" href="tel:+998932635404">
+        <div class="icon">☎</div>
+        <div class="link-text">
+          <div class="link-title">Telefon</div>
+          <div class="link-value">+998 93 263 54 04</div>
+        </div>
+      </a>
+
+      <a class="link" href="tel:+998916575405">
+        <div class="icon">☎</div>
+        <div class="link-text">
+          <div class="link-title">Telefon</div>
+          <div class="link-value">+998 91 657 54 05</div>
+        </div>
+      </a>
+
+      <a
+        class="link"
+        href="https://t.me/Nurullo_Ibrohimov_04_04"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="icon">✈</div>
+        <div class="link-text">
+          <div class="link-title">Telegram</div>
+          <div class="link-value">@Nurullo_Ibrohimov_04_04</div>
+        </div>
+      </a>
+
+      <a
+        class="link"
+        href="https://instagram.com/ibroh1mov_2004"
+        target="_blank"
+        rel="noopener"
+      >
+        <div class="icon">◎</div>
+        <div class="link-text">
+          <div class="link-title">Instagram</div>
+          <div class="link-value">@ibroh1mov_2004</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="quote">
+      <p>
+        “Haqiqiy boylik — ishonadigan va kutib oladigan
+        insonlaring borligi!”
+      </p>
+
+      <p>
+        Qadrlaganingni asra!
+      </p>
+    </div>
+
+    <button class="save-contact" onclick="saveContact()">
+      ＋ Kontakt sifatida saqlash
+    </button>
+
+    <div class="footer">
+      NURULLO IBROHIMOV • DIGITAL CARD
+    </div>
+
+  </main>
+
+  <script>
+    function saveContact() {
+      const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+FN:Nurullo Ibrohimov
+N:Ibrohimov;Nurullo;Tolibjon;; 
+TEL;TYPE=CELL:+998932635404
+TEL;TYPE=CELL:+998916575405
+URL:https://t.me/Nurullo_Ibrohimov_04_04
+URL:https://instagram.com/ibroh1mov_2004
+ADR:;;Qo‘rg‘oncha mahallasi;Toshloq;Farg‘ona;;Uzbekistan
+BDAY:2004-04-05
+END:VCARD`;
+
+      const blob = new Blob([vcard], {
+        type: "text/vcard"
+      });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+
+      a.href = url;
+      a.download = "Nurullo-Ibrohimov.vcf";
+      a.click();
+
+      URL.revokeObjectURL(url);
+    }
+  </script>
+
+</body>
+</html>
